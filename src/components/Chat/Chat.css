@@ -1,0 +1,22 @@
+.chat-field {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+}
+.chat {
+  max-width: 80%;
+  width: fit-content;
+  padding: 10px;
+  padding-left: 20px;
+  margin-left: auto;
+  font-size: 1rem;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.7);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.chat.bot {
+  margin-left: unset;
+}

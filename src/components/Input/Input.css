@@ -1,0 +1,40 @@
+.chat-input-container {
+  width: 100%;
+  background-color: aliceblue;
+  border-radius: 15px;
+  padding: 5px;
+
+  & form {
+    display: flex;
+  }
+
+  & input {
+    padding: 5px;
+    width: 90%;
+    background-color: inherit;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+  }
+  & button {
+    border-radius: 50%;
+    padding: 5px 8px;
+    background-color: #2d9349;
+    color: white;
+    border: none;
+    transition: all 0.1s ease;
+    transform: scale(1);
+  }
+  & button:not(:disabled):hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  & button:not(:disabled):active {
+    transform: scale(0.9);
+  }
+  & button:disabled {
+    background-color: lightgray;
+    cursor: unset;
+  }
+}

@@ -1,0 +1,122 @@
+.chat-container {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+}
+
+.chatbot-container {
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  height: 500px;
+  width: min(100vw, 500px);
+  color: whitesmoke;
+  /* From https://css.glass */
+  background: rgba(141, 130, 222, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(141, 130, 222, 0.3);
+  overflow: hidden;
+  transform: scale(0);
+  /* opacity: 0; */
+  transform-origin: right bottom;
+  transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  /* opacity 0.4s cubic-bezier(0.075, 0.82, 0.165, 1); */
+}
+
+.chat-container .open {
+  /* opacity: 1; */
+  transform: scale(1);
+  transform-origin: right bottom;
+}
+
+@media (max-width: 500px) {
+  .chatbot-container {
+    height: min(700px, 80vh);
+    right: -40px;
+  }
+}
+
+.chatbot-content {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.chat-header {
+  font-size: 1.5rem;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.6);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  & .title {
+    width: 95%;
+  }
+  & .title .author {
+    margin-left: 10px;
+    width: 30%;
+    font-size: 0.8rem;
+    & a {
+      font-weight: 700;
+      color: #2d9349;
+    }
+  }
+  & svg {
+    cursor: pointer;
+    height: 48px;
+    width: 48px;
+    margin-right: 10px;
+    /* transform: scale(2); */
+  }
+}
+
+.chat-body {
+  padding: 10px;
+  height: 80%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  scrollbar-color: rgba(17, 25, 40, 0.3);
+}
+
+.chat-footer {
+  min-height: 70px;
+  font-size: 28px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.9);
+  padding: 20px;
+}
+
+.chatbot-button {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: rgba(141, 130, 222, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(141, 130, 222, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  & svg {
+    height: 50px;
+    width: 50px;
+  }
+}
+.chatbot-button.open {
+  display: none;
+}
+
+.chatbot-button:hover {
+  transform: scale(1.05);
+}
+.chatbot-button:active {
+  transform: scale(0.8);
+}
