@@ -6,8 +6,8 @@ interface ChatInputProps {
 export const ChatInput: React.FC<ChatInputProps> = ({ handleNewChat }) => {
   const [inputValue, setInputValue] = useState('');
 
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleFormSubmit = (event?: React.FormEvent<HTMLFormElement>) => {
+    event?.preventDefault();
     handleNewChat(inputValue);
     setInputValue('');
   };
@@ -21,6 +21,13 @@ export const ChatInput: React.FC<ChatInputProps> = ({ handleNewChat }) => {
           id="chatInput"
           aria-label="Enter new Chat"
           placeholder="Tell me something about React.js"
+          onKeyDown={e => {
+            if (e.key === 'Enter' && !e.ctrlKey) {
+              e.preventDefault();
+            } else if (e.key === 'Enter' && e.ctrlKey) {
+              handleFormSubmit();
+            }
+          }}
           onChange={e => {
             setInputValue(e.target.value);
           }}
