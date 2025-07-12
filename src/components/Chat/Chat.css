@@ -16,6 +16,11 @@
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
 }
+@media (width>700px) {
+  .chat {
+    font-size: 1rem;
+  }
+}
 
 .chat.bot {
   margin-left: unset;

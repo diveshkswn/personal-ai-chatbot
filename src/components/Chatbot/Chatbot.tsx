@@ -14,6 +14,14 @@ export const Chatbot: React.FC = () => {
   ]);
 
   useEffect(() => {
+    if (window.innerWidth < 700 && !isOpen) {
+      setTimeout(() => {
+        setIsOpen(true);
+      }, 600);
+    }
+  }, []);
+
+  useEffect(() => {
     setTimeout(() => {
       if (chatBodyRef.current) {
         chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
@@ -85,7 +93,6 @@ export const Chatbot: React.FC = () => {
           <div className="chat-header">
             <AIIcon />
             <span className="title">
-              {' '}
               AI Chatbot
               <span className="author">
                 By{' '}

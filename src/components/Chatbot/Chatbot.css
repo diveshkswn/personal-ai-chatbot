@@ -9,7 +9,7 @@
   bottom: 20px;
   right: 40px;
   height: 500px;
-  width: min(100vw, 500px);
+  width: min(100dvw, 500px);
   color: whitesmoke;
   /* From https://css.glass */
   background: rgba(141, 130, 222, 0.2);
@@ -34,9 +34,9 @@
 
 @media (max-width: 500px) {
   .chatbot-container {
-    height: 98vh;
+    height: 102dvh;
     right: -40px;
-    bottom: -30px;
+    bottom: -50px;
   }
 }
 

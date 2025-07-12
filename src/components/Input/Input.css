@@ -38,3 +38,11 @@
     cursor: unset;
   }
 }
+
+@media (width>700px) {
+  .chat-input-container {
+    & input {
+      font-size: 1.2rem;
+    }
+  }
+}
